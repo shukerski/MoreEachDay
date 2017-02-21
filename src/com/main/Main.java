@@ -25,6 +25,7 @@ public class Main {
 		Integer userID2 = userManager.addUser("mitaka", "mitaka@abv.bg", "pass2");
 
 
+		System.out.println("Succes");
 		session.close();
 
 	}
