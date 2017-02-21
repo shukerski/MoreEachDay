@@ -10,7 +10,7 @@
 		</meta>
 		<id name="followerID" type="int" column="follower_id">
 			<generator class="assigned"/>
-s		</id>
+		</id>
 		<property name="followeeID" column="followee_id" type="int" />
 	</class>
 </hibernate-mapping>

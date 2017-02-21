@@ -1,19 +1,18 @@
 package com.user;
 
 import org.hibernate.HibernateException;
-import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class UserManager {
-	private static Session session;
+	private Session session;
 
 	public UserManager(Session session) {
 		// TODO Auto-generated constructor stub
 		this.session = session;
 	}
 
-	public static Integer addUser(String username, String email, String password) {
+	public Integer addUser(String username, String email, String password) {
 		Transaction tx = null;
 		Integer userID = null;
 		
