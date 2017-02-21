@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.tasks.TaskManager;
 import com.user.SocialGraphManager;
 import com.user.UserManager;
 
@@ -25,11 +26,14 @@ public class Main {
 		Integer userID1 = userManager.addUser("b0r1s", "borcho@abv.bg", "pass");
 		Integer userID2 = userManager.addUser("mitaka", "mitaka@abv.bg", "pass2");
 
-		SocialGraphManager socialGraphManager = new SocialGraphManager(session);
-		socialGraphManager.follow(14, 17);
+//		SocialGraphManager socialGraphManager = new SocialGraphManager(session);
+//		socialGraphManager.follow(14, 17);
 /*		socialGraphManager.unfollow(19, 20);*/
+		
+		TaskManager tm = new TaskManager(session);
+		tm.addTask(1, 1, "Go out and have fun!");
 
-		System.out.println(userID2);
+//		System.out.println(userID2);
 		session.close();
 
 	}

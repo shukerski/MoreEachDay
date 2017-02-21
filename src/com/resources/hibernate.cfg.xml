@@ -25,6 +25,7 @@
 		<!-- List of XML mapping files -->
 		<mapping resource="com/resources/users.hbm.xml" />
 		<mapping resource="com/resources/social_graph.hbm.xml" />
+		<mapping resource="com/resources/task.hbm.xml" />
 
 	</session-factory>
 </hibernate-configuration>
