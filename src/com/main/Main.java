@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.user.SocialGraphManager;
 import com.user.UserManager;
 
 public class Main {
@@ -24,8 +25,11 @@ public class Main {
 		Integer userID1 = userManager.addUser("b0r1s", "borcho@abv.bg", "pass");
 		Integer userID2 = userManager.addUser("mitaka", "mitaka@abv.bg", "pass2");
 
+		SocialGraphManager socialGraphManager = new SocialGraphManager(session);
+		socialGraphManager.follow(14, 17);
+/*		socialGraphManager.unfollow(19, 20);*/
 
-		System.out.println("Succes");
+		System.out.println(userID2);
 		session.close();
 
 	}

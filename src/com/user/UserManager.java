@@ -1,6 +1,9 @@
 package com.user;
 
+import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 public class UserManager {
 	private Session session;
@@ -11,12 +14,19 @@ public class UserManager {
 	}
 
 	public Integer addUser(String username, String email, String password) {
-		// TODO Auto-generated method stub
+		Transaction tx = null;
 		Integer userID = null;
-
-		User newUser = new User(username, email, password);
-		userID = (Integer) session.save(newUser);
-
+		
+		try {
+			tx = session.beginTransaction();
+			User newUser = new User(username, email, password);
+			userID = (Integer) session.save(newUser);
+			tx.commit();
+		} catch (HibernateException e) {
+			if (tx != null)
+				tx.rollback();
+			e.printStackTrace();
+		}
 		return userID;
 	}
 }

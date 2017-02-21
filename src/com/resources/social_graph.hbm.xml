@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.user.SocialLink" table="social_graph">
+		<meta attribute="class-description">
+			This class contains the social_link detail.
+		</meta>
+		<id name="followerID" type="int" column="follower_id">
+			<generator class="assigned" />
+		</id>
+		<property name="followeeID" column="followee_id" type="int" />
+	</class>
+</hibernate-mapping>

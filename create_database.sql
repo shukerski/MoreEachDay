@@ -27,3 +27,8 @@ CREATE TABLE `completed_tasks` (
     `task_id` INT NOT NULL,
     `timestamp` DATETIME DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `social_graph` (
+    `follower_id` INT NOT NULL,
+    `followee_id` INT NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
