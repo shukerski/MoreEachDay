@@ -9,8 +9,8 @@
 			This class contains the social_link detail.
 		</meta>
 		<id name="followerID" type="int" column="follower_id">
-			<generator class="assigned" />
-		</id>
+			<generator class="assigned"/>
+s		</id>
 		<property name="followeeID" column="followee_id" type="int" />
 	</class>
 </hibernate-mapping>

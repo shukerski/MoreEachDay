@@ -6,10 +6,10 @@ public class User {
 	private String email;
 	private String password;
 	
-	public User(String username, String mail, String password) {
+	public User(String username, String email, String password) {
 		super();
 		this.username = username;
-		this.email = mail;
+		this.email = email;
 		this.password = password;
 	}
 	

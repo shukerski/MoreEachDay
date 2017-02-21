@@ -6,14 +6,14 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 public class UserManager {
-	private Session session;
+	private static Session session;
 
 	public UserManager(Session session) {
 		// TODO Auto-generated constructor stub
 		this.session = session;
 	}
 
-	public Integer addUser(String username, String email, String password) {
+	public static Integer addUser(String username, String email, String password) {
 		Transaction tx = null;
 		Integer userID = null;
 		
